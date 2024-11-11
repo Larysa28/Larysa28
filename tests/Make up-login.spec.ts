@@ -29,6 +29,7 @@ test('Open and login on makeup.com.ua, then verify name and surname', async ({ p
     await page.fill(passwordInputSelector, password);  
     await page.click(submitButtonSelector); 
   });
+  
   await test.step('Click to open the login modal and verify name & surname', async () => {
     await page.waitForSelector(loginTriggerSelector); 
     await page.click(loginTriggerSelector);
