@@ -29,11 +29,10 @@ test('Open and login on makeup.com.ua, then verify name and surname', async ({ p
     await page.fill(passwordInputSelector, password);  
     await page.click(submitButtonSelector); 
   });
-  
+
   await test.step('Click to open the login modal and verify name & surname', async () => {
     await page.waitForSelector(loginTriggerSelector); 
     await page.click(loginTriggerSelector);
-  
     const nameValue = await page.inputValue(nameInputSelector);
     const surnameValue = await page.inputValue(surnameInputSelector);
     expect(nameValue).toBe(expectedName);
